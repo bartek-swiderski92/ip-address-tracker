@@ -5,7 +5,7 @@ function Header() {
     return (
         <header>
             <div className="background-image">
-                <img src={require('./images/pattern-bg.png')} alt="background" />
+                <img className="header-bg-image" src={require('./images/pattern-bg.png')} alt="background" />
             </div>
         </header>
     )
