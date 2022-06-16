@@ -1,11 +1,11 @@
 import './App.scss';
+// @ts-ignore
+import Header from './Header.tsx';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
-      <div>I', a div</div>
+      <Header></Header>
     </div>
   );
 }
