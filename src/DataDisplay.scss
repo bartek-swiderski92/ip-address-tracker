@@ -1,0 +1,19 @@
+@import './sass/variables';
+
+.data-display{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 80%;
+    min-height: 150px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    transform: translate(0,-50%);
+
+    &--divider {
+        border-left:1px solid $label-color;
+        margin: 3% 0;
+    }
+}
