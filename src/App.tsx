@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import './App.scss';
 // @ts-ignore
 import Header from './Header.tsx';
@@ -5,9 +7,12 @@ import Header from './Header.tsx';
 import DataDisplay from './DataDisplay.tsx';
 
 function App() {
+
+  const [IpResponse, setIpResponse] = useState({})
+
   return (
     <div className="App">
-      <Header></Header>
+      <Header setIpResponse={setIpResponse} />
       <DataDisplay />
     </div>
   );
