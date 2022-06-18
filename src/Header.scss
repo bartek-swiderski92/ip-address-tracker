@@ -1,20 +1,25 @@
 @import "./sass/variables";
 
-.header--background {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    
-    overflow: hidden;
-    background-color: #555;
-    width: 1440px;
-    height: 250px;
+$flex-gap: 30px;
+
+.header {
+    &--background {
+        display: flex;
+        justify-content: flex-start;
+        gap: $flex-gap;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        background-color: #555;
+        max-width: 1440px;
+        height: 250px;
     }
 
-.header--heading {
-    font-family: $font-family;
-    color: white;
-    font-size: 3rem;
-    font-weight: 500;
+    &--heading {
+        margin-top: $flex-gap;
+        font-family: $font-family;
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
 }
