@@ -6,14 +6,7 @@ function Header() {
 
     return (
         <header>
-            <div className="background-image"
-                style={{
-                    backgroundImage: "url(" + background + ")"
-                }}
-            >
-                {/* <img className="header-bg-image" src={require('./images/pattern-bg.png')} alt="background" /> */}
-
-            </div>
+            <div className="background-image">            </div>
         </header >
     )
 }
