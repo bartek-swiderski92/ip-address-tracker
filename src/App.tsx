@@ -8,12 +8,12 @@ import DataDisplay from './DataDisplay.tsx';
 
 function App() {
 
-  const [IpResponse, setIpResponse] = useState({})
+  const [ipResponse, setIpResponse] = useState()
 
   return (
     <div className="App">
       <Header setIpResponse={setIpResponse} />
-      <DataDisplay />
+      <DataDisplay ipResponse={ipResponse} />
     </div>
   );
 }

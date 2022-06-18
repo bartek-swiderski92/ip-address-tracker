@@ -3,16 +3,16 @@ import './DataDisplay.scss';
 //@ts-ignore
 import DataDisplayField from "./DataDisplayField.tsx"
 
-function DataDisplay() {
+function DataDisplay({ ipResponse }) {
     return (
-        <div className="data-display">
-            <DataDisplayField label={'IP Address'} result={'192.192.192.195'} />
+        <div id='data-display' className="data-display">
+            <DataDisplayField label={'IP Address'} result={ipResponse?.ip} />
             <div className="data-display--divider"></div>
-            <DataDisplayField label={'Location'} result={'Brooklyn, NY 10001'} />
+            <DataDisplayField label={'Location'} result={ipResponse?.location.city} />
             <div className="data-display--divider"></div>
-            <DataDisplayField label={'Timezone'} result={'UTC -09:00'} />
+            <DataDisplayField label={'Timezone'} result={ipResponse?.location.timezone} />
             <div className="data-display--divider"></div>
-            <DataDisplayField label={'Isp'} result={'SpaceX Starlink'} />
+            <DataDisplayField label={'Isp'} result={ipResponse?.isp} />
         </div>
     )
 }
