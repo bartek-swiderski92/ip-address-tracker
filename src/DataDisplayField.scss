@@ -1,16 +1,18 @@
 @import './sass/variables';
 
-.data-display-field{
+.data-display-field {
     font-family: $font-family;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 30px;
 
+    @media (max-width: 740px) {
+        text-align: center;
+    }
 }
 
 .data-display-field {
-    &--label{
+    &--label {
         font-size: 1.4rem;
         color: $label-color;
         font-weight: 500;

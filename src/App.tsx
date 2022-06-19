@@ -17,19 +17,19 @@ function App() {
   const [ipResponse, setIpResponse] = useState()
 
   return (
-    <div className="App">
+    <div className="app">
       <Header setIpResponse={setIpResponse} />
 
 
 
       {ipResponse ? (
-        <>
+        <div className="app--response">
           <DataDisplay ipResponse={ipResponse} />
           <MapsFrame ipResponse={ipResponse} API_KEY={API_KEY} />
-        </>
+        </div >
       ) : (
         <>
-          <FontAwesomeIcon className="App--spinner" icon={faSpinner} />
+          <FontAwesomeIcon className="app--spinner" icon={faSpinner} />
         </>
       )
       }
