@@ -3,8 +3,6 @@ import "./SearchBar.scss";
 function SearchBar({ placeholder, setIpResponse }) {
 
     function getInputValue() {
-        const dataDisplay = document.getElementById('data-display');
-        // const ipInput = document.getElementById('ip-input')
         setIpResponse({
             "ip": "82.42.241.7",
             "location": {
@@ -29,9 +27,6 @@ function SearchBar({ placeholder, setIpResponse }) {
             },
             "isp": "Virgin Media Limited"
         });
-
-        //@ts-ignore
-        dataDisplay.style.display = "flex";
     }
 
     return (

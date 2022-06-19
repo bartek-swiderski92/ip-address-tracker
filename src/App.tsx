@@ -17,8 +17,13 @@ function App() {
   return (
     <div className="App">
       <Header setIpResponse={setIpResponse} />
-      <DataDisplay ipResponse={ipResponse} />
-      <MapsFrame API_KEY={API_KEY} />
+
+      {ipResponse ? (
+        <>
+          <DataDisplay ipResponse={ipResponse} />
+          <MapsFrame ipResponse={ipResponse} API_KEY={API_KEY} />
+        </>
+      ) : (null)}
     </div>
   );
 }

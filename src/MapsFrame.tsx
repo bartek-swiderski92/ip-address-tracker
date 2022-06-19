@@ -1,6 +1,6 @@
 import './MapsFrame.scss';
 
-function MapsFrame({ API_KEY }) {
+function MapsFrame({ ipResponse, API_KEY }) {
     return (
         <iframe
             id="map-frame"
@@ -8,7 +8,7 @@ function MapsFrame({ API_KEY }) {
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=Space+Needle,Seattle+WA`}
+            src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${ipResponse.location.lat},${ipResponse.location.lng}`}
         />
     )
 }
