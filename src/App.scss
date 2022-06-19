@@ -8,6 +8,9 @@
 }
 
 .App {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 1440px;
     background-color: white;
     overflow: hidden;
