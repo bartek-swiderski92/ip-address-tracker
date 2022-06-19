@@ -10,7 +10,7 @@ function DataDisplay({ ipResponse }) {
             <div className="data-display--divider"></div>
             <DataDisplayField label={'Location'} result={ipResponse?.location.city} />
             <div className="data-display--divider"></div>
-            <DataDisplayField label={'Timezone'} result={ipResponse?.location.timezone} />
+            <DataDisplayField label={'Timezone'} result={'UTC ' + ipResponse?.location.timezone} />
             <div className="data-display--divider"></div>
             <DataDisplayField label={'Isp'} result={ipResponse?.isp} />
         </div>
