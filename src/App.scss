@@ -1,4 +1,5 @@
 @use './sass/variables';
+@use "./sass/animations";
 
 * {
     margin: 0;
@@ -14,4 +15,11 @@
     width: 1440px;
     background-color: white;
     overflow: hidden;
+    
+    &--spinner {
+        margin-top: 10%;
+        font-size: 5rem;
+        animation: spinner 1.2s infinite linear;
+    }
 }
+
