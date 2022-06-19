@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 import './App.scss';
 // @ts-ignore
@@ -18,12 +20,19 @@ function App() {
     <div className="App">
       <Header setIpResponse={setIpResponse} />
 
+
+
       {ipResponse ? (
         <>
           <DataDisplay ipResponse={ipResponse} />
           <MapsFrame ipResponse={ipResponse} API_KEY={API_KEY} />
         </>
-      ) : (null)}
+      ) : (
+        <>
+          <FontAwesomeIcon className="App--spinner" icon={faSpinner} />
+        </>
+      )
+      }
     </div>
   );
 }
