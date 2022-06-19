@@ -5,6 +5,10 @@ import './App.scss';
 import Header from './Header.tsx';
 // @ts-ignore
 import DataDisplay from './DataDisplay.tsx';
+// @ts-ignore
+import MapsFrame from './MapsFrame.tsx';
+
+const API_KEY = 'AIzaSyBrsnBRlSG9TfiQQif6GbwzTp7AQtdeyCA'
 
 function App() {
 
@@ -14,6 +18,7 @@ function App() {
     <div className="App">
       <Header setIpResponse={setIpResponse} />
       <DataDisplay ipResponse={ipResponse} />
+      <MapsFrame API_KEY={API_KEY} />
     </div>
   );
 }
