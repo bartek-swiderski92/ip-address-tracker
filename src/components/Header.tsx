@@ -10,7 +10,7 @@ export const Header: React.FC<Props> = ({ setIpResponse }) => {
         <header>
             <div className="header__background">
                 <h1 className="header__heading">IP Address Tracker</h1>
-                <SearchBar setIpResponse={setIpResponse} placeholder="Search for any IP address or domain" />
+                <SearchBar setIpResponse={setIpResponse} placeholder="github.com" />
             </div>
         </header >
     )
