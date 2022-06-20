@@ -1,11 +1,12 @@
 import './Header.scss';
+//@ts-ignore
+import { SearchBar } from './SearchBar.tsx'
 
+interface Props {
+    setIpResponse: {}
+}
 
-// @ts-ignore
-import SearchBar from './SearchBar.tsx'
-
-function Header({ setIpResponse }) {
-    // const background = './images/pattern-bg.png'
+export const Header: React.FC<Props> = ({ setIpResponse }) => {
 
     return (
         <header>
@@ -17,4 +18,3 @@ function Header({ setIpResponse }) {
     )
 }
 
-export default Header

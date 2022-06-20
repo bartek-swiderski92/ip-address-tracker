@@ -1,6 +1,11 @@
 import './DataDisplayField.scss';
 
-function DataDisplayField({ label, result }) {
+interface Props {
+    label: string;
+    result: string;
+}
+
+export const DataDisplayField: React.FC<Props> = ({label, result}) => {
 
     return (
         <div className="data-display-field">
@@ -10,4 +15,3 @@ function DataDisplayField({ label, result }) {
     )
 }
 
-export default DataDisplayField

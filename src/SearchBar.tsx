@@ -1,6 +1,11 @@
 import "./SearchBar.scss";
 
-function SearchBar({ placeholder, setIpResponse }) {
+interface Props {
+    placeholder: 'string',
+    setIpResponse: ({ }) => void
+}
+
+export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
 
     function getInputValue() {
         setIpResponse({
@@ -43,5 +48,3 @@ function SearchBar({ placeholder, setIpResponse }) {
 
     )
 }
-
-export default SearchBar
