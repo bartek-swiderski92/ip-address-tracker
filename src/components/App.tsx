@@ -27,9 +27,10 @@ function App() {
                 </div >
             ) : (
 
-                <>
-                    <FontAwesomeIcon className="app__spinner" icon={faSpinner} />
-                </>
+                <h2 className='app__info-heading'>Input any IP address or domain in the bar above...</h2>
+                // <>
+                //     <FontAwesomeIcon className="app__spinner" icon={faSpinner} />
+                // </>
             )
             }
             <div className="app__attribution">
