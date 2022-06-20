@@ -9,8 +9,8 @@ function Header({ setIpResponse }) {
 
     return (
         <header>
-            <div className="header--background">
-                <h1 className="header--heading">IP Address Tracker</h1>
+            <div className="header__background">
+                <h1 className="header__heading">IP Address Tracker</h1>
                 <SearchBar setIpResponse={setIpResponse} placeholder="Search for any IP address or domain" />
             </div>
         </header >

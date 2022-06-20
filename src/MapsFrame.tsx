@@ -3,8 +3,8 @@ import './MapsFrame.scss';
 function MapsFrame({ ipResponse, API_KEY }) {
     return (
         <iframe
-            id="map-frame"
-            title="map-frame"
+            id="maps-frame"
+            title="maps-frame"
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"

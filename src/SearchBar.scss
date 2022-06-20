@@ -5,14 +5,14 @@ $input-height: 60px;
     justify-content: center;
     width: 100%;
 
-    &--wrapper{
+    &__wrapper{
         display: flex;
         max-width: 550px;
         width: 85%;
         
     }
 
-    &--input{
+    &__input{
         flex-grow: 5;
         height: $input-height;
         padding-left: 20px;
@@ -22,7 +22,7 @@ $input-height: 60px;
         font-size: 18px;
     }
     
-    &--button {
+    &__button {
         background-color: black;
         height: $input-height;
         width: $input-height;

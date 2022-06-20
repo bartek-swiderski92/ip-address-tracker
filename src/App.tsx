@@ -23,16 +23,20 @@ function App() {
 
 
       {ipResponse ? (
-        <div className="app--response">
+        <div className="app__response">
           <DataDisplay ipResponse={ipResponse} />
           <MapsFrame ipResponse={ipResponse} API_KEY={API_KEY} />
         </div >
       ) : (
         <>
-          <FontAwesomeIcon className="app--spinner" icon={faSpinner} />
+          <FontAwesomeIcon className="app__spinner" icon={faSpinner} />
         </>
       )
       }
+      <div className="app__attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>.
+        Coded by <a href="https://www.linkedin.com/in/bartek-swiderski92/">Bartek Swiderski</a>.
+      </div>
     </div>
   );
 }

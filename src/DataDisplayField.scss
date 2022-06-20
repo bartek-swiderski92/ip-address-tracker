@@ -12,13 +12,13 @@
 }
 
 .data-display-field {
-    &--label {
+    &__label {
         font-size: 1.4rem;
         color: $label-color;
         font-weight: 500;
     }
 
-    &--result {
+    &__result {
         font-size: 2rem;
         font-weight: 700;
     }

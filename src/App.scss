@@ -16,13 +16,13 @@
     background-color: white;
     overflow: hidden;
 
-    &--spinner {
+    &__spinner {
         margin-top: 10%;
         font-size: 5rem;
         animation: spinner 1.2s infinite linear;
     }
 
-    &--response {
+    &__response {
         transform: translate(0, -10%);
 
         @media (max-width: 740px) {
