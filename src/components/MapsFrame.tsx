@@ -1,4 +1,4 @@
-import './MapsFrame.scss';
+import '../styles/MapsFrame.scss';
 
 interface Props {
     ipResponse: {

@@ -1,4 +1,4 @@
-import './DataDisplay.scss';
+import '../styles/DataDisplay.scss';
 import { DataDisplayField } from "./DataDisplayField"
 
 interface Props {

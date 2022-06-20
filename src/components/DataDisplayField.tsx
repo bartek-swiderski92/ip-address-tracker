@@ -1,4 +1,4 @@
-import './DataDisplayField.scss';
+import '../styles/DataDisplayField.scss';
 
 interface Props {
     label: string;

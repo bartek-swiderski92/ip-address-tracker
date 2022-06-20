@@ -1,4 +1,4 @@
-import "./SearchBar.scss";
+import "../styles/SearchBar.scss";
 
 interface Props {
     placeholder: string;
