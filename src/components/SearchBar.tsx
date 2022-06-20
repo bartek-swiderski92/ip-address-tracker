@@ -1,3 +1,4 @@
+import { DetailedHTMLProps, ButtonHTMLAttributes } from "react";
 import "../styles/SearchBar.scss";
 
 interface Props {
@@ -7,9 +8,18 @@ interface Props {
 
 export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
 
-    function getInputValue() {
+    //TODO: set if statement for ip address/domain
+    const ValidIpAddressRegex = "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$";
+    const ValidHostnameRegex = "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$";
+
+
+    //TODO: Check type for onClick Event
+    function getInputValue(event: any) {
+        const inputValue: string = (document.getElementById('ip-input') as HTMLInputElement).value
+        event.preventDefault();
+        console.log(inputValue)
         setIpResponse({
-            "ip": "82.42.241.7",
+            "ip": "98.255.241.7",
             "location": {
                 "country": "GB",
                 "region": "England",
@@ -37,11 +47,13 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
     return (
         <div className="search-bar">
             <div className="search-bar__wrapper">
+                <form action="">
+                    <input id="ip-input" className="search-bar__input" type="search" placeholder={placeholder} required />
+                    <button className="search-bar__button" onClick={getInputValue}>
 
-                <input id="ip-input" className="search-bar__input" type="search" placeholder={placeholder} />
-                <button className="search-bar__button" onClick={getInputValue}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" /></svg>
-                </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" /></svg>
+                    </button>
+                </form>
 
             </div>
         </div>
