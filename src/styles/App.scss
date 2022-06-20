@@ -32,6 +32,14 @@
         }
     }
 
+    &__info-heading {
+        margin-top: 10%;
+        font-size: 3rem;
+        font-weight: 300;
+        text-align: center;
+        font-family: $font-family;
+    }
+
     &__attribution {
         align-self: center;
         justify-self: flex-end;
