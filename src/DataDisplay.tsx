@@ -1,6 +1,5 @@
 import './DataDisplay.scss';
-//@ts-ignore
-import { DataDisplayField } from "./DataDisplayField.tsx"
+import { DataDisplayField } from "./DataDisplayField"
 
 interface Props {
     ipResponse: {

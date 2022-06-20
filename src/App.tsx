@@ -3,12 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 import './App.scss';
-//@ts-ignore
-import { Header } from './Header.tsx';
-//@ts-ignore
-import { DataDisplay } from './DataDisplay.tsx';
-//@ts-ignore
-import { MapsFrame } from './MapsFrame.tsx';
+import { Header } from './Header';
+import { DataDisplay } from './DataDisplay';
+import { MapsFrame } from './MapsFrame';
 
 const API_KEY = 'AIzaSyBrsnBRlSG9TfiQQif6GbwzTp7AQtdeyCA'
 

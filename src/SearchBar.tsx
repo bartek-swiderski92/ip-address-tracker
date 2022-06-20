@@ -1,8 +1,8 @@
 import "./SearchBar.scss";
 
 interface Props {
-    placeholder: 'string',
-    setIpResponse: ({ }) => void
+    placeholder: string;
+    setIpResponse: any;
 }
 
 export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
