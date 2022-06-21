@@ -1,47 +1,49 @@
-import { DetailedHTMLProps, ButtonHTMLAttributes } from "react";
+import axios from "axios";
+
 import "../styles/SearchBar.scss";
 
 interface Props {
     placeholder: string;
     setIpResponse: any;
-}
+};
 
 export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
-
-    //TODO: set if statement for ip address/domain
-    const ValidIpAddressRegex = "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$";
-    const ValidHostnameRegex = "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$";
+    const apiKey: string = 'at_oDYp4pdQHFfB8CUs5Er7QRjG0QGxX';
 
 
     //TODO: Check type for onClick Event
     function getInputValue(event: any) {
         event.preventDefault();
+        let paramKey: string;
         const inputValue: string = (document.getElementById('ip-input') as HTMLInputElement).value;
-        setIpResponse({
-            "ip": "98.255.241.7",
-            "location": {
-                "country": "GB",
-                "region": "England",
-                "city": "St Albans",
-                "lat": 51.75,
-                "lng": -0.33333,
-                "postalCode": "",
-                "timezone": "+01:00",
-                "geonameId": 2638867
-            },
-            "domains": [
-                "cpc119116-heme13-2-0-cust6.9-1.cable.virginm.net"
-            ],
-            "as": {
-                "asn": 5089,
-                "name": "NTL",
-                "route": "82.42.0.0/16",
-                "domain": "http://www.virginmedia.com",
-                "type": "Cable/DSL/ISP"
-            },
-            "isp": "Virgin Media Limited"
-        });
-    }
+
+        // checks if value passed is an input or hostname
+        // eslint-disable-next-line
+        const ValidIpAddressRegex = new RegExp("^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
+        // eslint-disable-next-line
+        const ValidHostnameRegex = new RegExp("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$");
+        
+        if (ValidIpAddressRegex.test(inputValue) === true) {
+            paramKey = 'ipAddress';
+        } else if (ValidHostnameRegex.test(inputValue) === true) {
+            paramKey = 'domain';
+        } else {
+            return window.alert('Please input correct IP address or domain.')
+        };
+
+        const apiUrl: string = `https://geo.ipify.org/api/v2/country?apiKey=${apiKey}&${paramKey}=${inputValue}`;
+
+        //@ts-ignore
+        axios.get(apiUrl)
+            .then((response) => {
+                console.log(response.data)
+                setIpResponse(response.data)
+            })
+            .catch(error => {
+                console.log(error);
+                window.alert('Invalid request, please check your input or try again later')
+            })
+    };
 
     return (
         <div className="search-bar">
@@ -52,6 +54,5 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
                 </button>
             </form>
         </div >
-
     )
-}
+};
