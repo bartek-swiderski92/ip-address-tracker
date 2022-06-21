@@ -15,9 +15,8 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
 
     //TODO: Check type for onClick Event
     function getInputValue(event: any) {
-        const inputValue: string = (document.getElementById('ip-input') as HTMLInputElement).value
         event.preventDefault();
-        console.log(inputValue)
+        const inputValue: string = (document.getElementById('ip-input') as HTMLInputElement).value;
         setIpResponse({
             "ip": "98.255.241.7",
             "location": {
@@ -46,12 +45,12 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
 
     return (
         <div className="search-bar">
-            <form className="search-bar__form" action="submit">
+            <form className="search-bar__form" action="submit" onSubmit={getInputValue}>
                 <input id="ip-input" className="search-bar__input" type="search" placeholder={placeholder} required />
-                <button className="search-bar__button" onSubmit={getInputValue}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" /></svg>
-            </button>
-        </form>
+                <button type="submit" className="search-bar__button" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" /></svg>
+                </button>
+            </form>
         </div >
 
     )
