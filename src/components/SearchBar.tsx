@@ -46,14 +46,13 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
 
     return (
         <div className="search-bar">
-            <div className="search-bar__wrapper">
-                    <input id="ip-input" className="search-bar__input" type="search" placeholder={placeholder} required />
-                    <button className="search-bar__button" onClick={getInputValue}>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" /></svg>
-                    </button>
-            </div>
-        </div>
+            <form className="search-bar__form" action="submit">
+                <input id="ip-input" className="search-bar__input" type="search" placeholder={placeholder} required />
+                <button className="search-bar__button" onSubmit={getInputValue}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" /></svg>
+            </button>
+        </form>
+        </div >
 
     )
 }
