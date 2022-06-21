@@ -7,9 +7,19 @@ interface Props {
     setIpResponse: any;
 };
 
+interface ipResponse {
+    ip: string;
+    lat: string,
+    lng: string,
+    city?: string;
+    region?: string;
+    country?: string;
+    timezone: string;
+    isp: string;
+}
+
 export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
     const apiKey: string = 'at_oDYp4pdQHFfB8CUs5Er7QRjG0QGxX';
-
 
     //TODO: Check type for onClick Event
     function getInputValue(event: any) {
@@ -22,7 +32,7 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
         const ValidIpAddressRegex = new RegExp("^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
         // eslint-disable-next-line
         const ValidHostnameRegex = new RegExp("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$");
-        
+
         if (ValidIpAddressRegex.test(inputValue) === true) {
             paramKey = 'ipAddress';
         } else if (ValidHostnameRegex.test(inputValue) === true) {
@@ -31,13 +41,24 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
             return window.alert('Please input correct IP address or domain.')
         };
 
-        const apiUrl: string = `https://geo.ipify.org/api/v2/country?apiKey=${apiKey}&${paramKey}=${inputValue}`;
+        const apiUrl: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&${paramKey}=${inputValue}`;
 
         //@ts-ignore
         axios.get(apiUrl)
             .then((response) => {
-                console.log(response.data)
-                setIpResponse(response.data)
+                const ipResponse: ipResponse = {
+                    ip: response.data.ip,
+                    lat: response.data.location.lat,
+                    lng: response.data.location.lng,
+                    city: response.data.location.city,
+                    region: response.data.location.region,
+                    country: response.data.location.country,
+                    timezone: response.data.location.timezone,
+                    isp: response.data.isp,
+                }
+
+                console.log(response)
+                setIpResponse(ipResponse)
             })
             .catch(error => {
                 console.log(error);
