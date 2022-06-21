@@ -4,39 +4,35 @@ import { DataDisplayField } from "./DataDisplayField"
 interface Props {
     ipResponse: {
         ip: string,
-        location: {
-            country: string,
-            region: string,
-            city: string,
-            timezone: string
-        },
+        country: string,
+        region: string,
+        city: string,
+        timezone: string,
         isp: string,
     };
 }
 
 export const DataDisplay: React.FC<Props> = ({ ipResponse }) => {
-
-    // Assigns props to variables
-    const [ip, city, region, country, timezone, isp]: [string, string, string, string, string, string] = [ipResponse?.ip, ipResponse?.location.city, ipResponse?.location.region, ipResponse.location.country, ipResponse?.location.timezone, ipResponse?.isp]
+    console.log(ipResponse)
 
     // Checks if the value is defined
     function stringifyResult(city: string, region: string, country: string): string {
-        return (
-            city ? `${city},` : ``
-                + region ? `${region},` : ''
-                    + country ? `${country},` : ''
-        ).slice(0, -1);
+        let result: string = ''
+        if (city) result += city + ', ';
+        if (region) result += region + ', ';
+        if (country) result += country + ',';
+        return result.slice(0, -1);
     }
 
     return (
         <div id='data-display' className="data-display">
-            <DataDisplayField label={'IP Address'} result={ip} />
+            <DataDisplayField label={'IP Address'} result={ipResponse.ip} />
             <div className="data-display__divider"></div>
-            <DataDisplayField label={'Location'} result={stringifyResult(city, region, country)} />
+            <DataDisplayField label={'Location'} result={stringifyResult(ipResponse.city, ipResponse.region, ipResponse.country)} />
             <div className="data-display__divider"></div>
-            <DataDisplayField label={'Timezone'} result={`UTC ${timezone}`} />
+            <DataDisplayField label={'Timezone'} result={`UTC ${ipResponse.timezone}`} />
             <div className="data-display__divider"></div>
-            <DataDisplayField label={'Isp'} result={isp} />
+            <DataDisplayField label={'Isp'} result={ipResponse.isp} />
         </div>
     )
 }
