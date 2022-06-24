@@ -16,18 +16,15 @@
     background-color: white;
     overflow: hidden;
 
-    &__spinner {
-        margin-top: 10%;
-        font-size: 5rem;
-        animation: spinner 1.2s infinite linear;
-    }
-
     &__response {
+        display: flex;
+        flex-direction: column;
+
         transform: translate(0, -10%);
+
 
         @media (max-width: 740px) {
             flex-direction: column;
-            align-items: center;
             transform: translate(0, -7.5%);
         }
     }
@@ -40,12 +37,23 @@
         font-family: $font-family;
     }
 
+    &__spinner {
+        display: none;
+        align-content: center;
+        margin-top: 10%;
+        font-size: 5rem;
+        animation: spinner 1.2s infinite linear;
+    }
+
+    // &__response-data {
+    //     display: none;
+    // }
+
     &__attribution {
         align-self: center;
         justify-self: flex-end;
         font-family: $font-family;
         margin-top: auto;
         margin-bottom: 4rem;
-
     }
 }

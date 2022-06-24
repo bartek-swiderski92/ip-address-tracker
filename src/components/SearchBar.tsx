@@ -5,6 +5,7 @@ import "../styles/SearchBar.scss";
 interface Props {
     placeholder: string;
     setIpResponse: any;
+    animateLoading: any;
 };
 
 interface ipResponse {
@@ -18,21 +19,24 @@ interface ipResponse {
     isp: string;
 }
 
-export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
+export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animateLoading }) => {
     const apiKey: string = 'at_oDYp4pdQHFfB8CUs5Er7QRjG0QGxX';
 
     //TODO: Check type for onClick Event
     function getInputValue(event: any) {
         event.preventDefault();
+        animateLoading(true);
+
         let paramKey: string;
         const inputValue: string = (document.getElementById('ip-input') as HTMLInputElement).value;
 
-        // checks if value passed is an input or hostname
+        // Check if value passed is an input or a hostname
         // eslint-disable-next-line
         const ValidIpAddressRegex = new RegExp("^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
         // eslint-disable-next-line
         const ValidHostnameRegex = new RegExp("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$");
 
+        // enter correct param key
         if (ValidIpAddressRegex.test(inputValue) === true) {
             paramKey = 'ipAddress';
         } else if (ValidHostnameRegex.test(inputValue) === true) {
@@ -56,12 +60,12 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse }) => {
                     timezone: response.data.location.timezone,
                     isp: response.data.isp,
                 }
-
-                console.log(response)
+                animateLoading(false);
                 setIpResponse(ipResponse)
             })
             .catch(error => {
-                console.log(error);
+                animateLoading(false);
+                setIpResponse(false);
                 window.alert('Invalid request, please check your input or try again later')
             })
     };

@@ -13,9 +13,8 @@ interface Props {
 }
 
 export const DataDisplay: React.FC<Props> = ({ ipResponse }) => {
-    console.log(ipResponse)
 
-    // Checks if the value is defined
+    // Checks if the values are defined, remove last comma
     function stringifyResult(city: string, region: string, country: string): string {
         let result: string = ''
         if (city) result += city + ', ';
