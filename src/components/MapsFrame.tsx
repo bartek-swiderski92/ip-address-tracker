@@ -26,9 +26,7 @@ export const MapsFrame: React.FC<Props> = ({ ipResponse, API_KEY }) => {
             />
         )
     } else {
-
-        //TODO: fix else statement
-        return (<div></div>)
+        return (<div>Error while loading the data, please try again later</div>)
     }
 
 }
