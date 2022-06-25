@@ -1,35 +1,36 @@
 $input-height: 60px;
+$border-radius: 15px;
 
 .search-bar {
     display: flex;
     justify-content: center;
     width: 100%;
 
-    &__form{
+    &__form {
         display: flex;
         max-width: 550px;
         width: 85%;
-        
     }
 
-    &__input{
+    &__input {
         flex-grow: 5;
         height: $input-height;
         padding-left: 20px;
         border: none;
-        border-bottom-left-radius: 15px;
-        border-top-left-radius: 15px;
+        border-radius: $border-radius;
         font-size: 18px;
+        transform: translateX($input-height/2);
+
     }
-    
+
     &__button {
         background-color: black;
         height: $input-height;
         width: $input-height;
+        transform: translateX(-$input-height/2);
         border: none;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
         cursor: pointer;
     }
 }
-
