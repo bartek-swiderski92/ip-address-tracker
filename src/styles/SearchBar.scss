@@ -19,7 +19,7 @@ $border-radius: 15px;
         border: none;
         border-radius: $border-radius;
         font-size: 18px;
-        transform: translateX($input-height/2);
+        transform: translateX(calc($input-height / 2));
 
     }
 
@@ -27,7 +27,7 @@ $border-radius: 15px;
         background-color: black;
         height: $input-height;
         width: $input-height;
-        transform: translateX(-$input-height/2);
+        transform: translateX(calc($input-height / 2 * -1));
         border: none;
         border-top-right-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
