@@ -12,6 +12,7 @@ import { MapsFrame } from './MapsFrame';
 const API_KEY = 'AIzaSyBrsnBRlSG9TfiQQif6GbwzTp7AQtdeyCA'
 
 function App() {
+    //TODO: ipResponse type in state
     const [ipResponse, setIpResponse] = useState();
 
     function animateLoading(displaySpinner: boolean) {

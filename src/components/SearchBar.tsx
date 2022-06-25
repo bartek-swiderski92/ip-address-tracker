@@ -47,7 +47,8 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animate
 
         const apiUrl: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&${paramKey}=${inputValue}`;
 
-        //@ts-ignore
+        // @ts-ignore
+        // TODO: define type for axios request
         axios.get(apiUrl)
             .then((response) => {
                 const ipResponse: ipResponse = {
