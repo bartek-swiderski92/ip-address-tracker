@@ -12,7 +12,7 @@ import { Attribution } from './Attribution';
 
 const API_KEY = 'AIzaSyBrsnBRlSG9TfiQQif6GbwzTp7AQtdeyCA'
 
-function App() {
+export const App: React.FC = () => {
     //TODO: ipResponse type in state
     const [ipResponse, setIpResponse] = useState();
 
@@ -49,4 +49,4 @@ function App() {
     );
 }
 
-export default App;
+// export default App;
