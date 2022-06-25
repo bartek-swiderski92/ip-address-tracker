@@ -12,10 +12,9 @@ import { Attribution } from './Attribution';
 
 import { IpResponse } from "./IpResponse.model";
 
-const API_KEY = 'AIzaSyBrsnBRlSG9TfiQQif6GbwzTp7AQtdeyCA'
+const API_KEY = 'AIzaSyBrsnBRlSG9TfiQQif6GbwzTp7AQtdeyCA';
 
 export const App: React.FC = () => {
-    //TODO: ipResponse type in state
     const [ipResponse, setIpResponse]: [IpResponse, Function] = useState({
         ip: '',
         lat: '',
@@ -36,7 +35,7 @@ export const App: React.FC = () => {
 
         // Switch spinner display
         spinner.style.display = displaySpinner ? 'block' : 'none';
-    }
+    };
 
     return (
         <div className="app">
@@ -48,12 +47,12 @@ export const App: React.FC = () => {
                         <MapsFrame ipResponse={ipResponse} API_KEY={API_KEY} />
                     </div>
                 ) : (
-                    <h2 id="info-heading" 
-                    className='app__info-heading'>Input any IP address or domain in the bar above...</h2>
+                    <h2 id="info-heading"
+                        className='app__info-heading'>Input any IP address or domain in the bar above...</h2>
                 )}
                 <FontAwesomeIcon id="spinner" className="app__spinner" icon={faSpinner} />
             </div>
             <Attribution />
         </div >
     );
-}
+};

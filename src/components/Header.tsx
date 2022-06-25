@@ -4,7 +4,7 @@ import { SearchBar } from './SearchBar';
 interface Props {
     setIpResponse: any;
     animateLoading: any;
-}
+};
 
 export const Header: React.FC<Props> = ({ setIpResponse, animateLoading }) => {
     return (
@@ -15,5 +15,5 @@ export const Header: React.FC<Props> = ({ setIpResponse, animateLoading }) => {
             </div>
         </header >
     )
-}
+};
 

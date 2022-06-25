@@ -22,11 +22,11 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animate
         let paramKey: string;
         const inputValue: string = (document.getElementById('ip-input') as HTMLInputElement).value;
 
-        // Check if value passed is an input or a hostname
+        // Check if the passed value is an input or a hostname
         const ValidIpAddressRegex = new RegExp("^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
         const ValidHostnameRegex = new RegExp("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]).)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9])$");
 
-        // enter correct param key
+        // Enter correct param key
         if (ValidIpAddressRegex.test(inputValue) === true) {
             paramKey = 'ipAddress';
         } else if (ValidHostnameRegex.test(inputValue) === true) {
@@ -37,8 +37,6 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animate
 
         const apiUrl: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&${paramKey}=${inputValue}`;
 
-        // @ts-ignore
-        // TODO: define type for axios request
         axios.get(apiUrl)
             .then((response) => {
                 const ipResponse: IpResponse = {
@@ -54,7 +52,7 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animate
                 animateLoading(false);
                 setIpResponse(ipResponse)
             })
-            .catch(error => {
+            .catch(() => {
                 animateLoading(false);
                 setIpResponse(false);
                 window.alert('Invalid request, please check your input or try again later')

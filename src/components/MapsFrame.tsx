@@ -5,7 +5,7 @@ import { IpResponse } from "./IpResponse.model";
 interface Props {
     ipResponse: IpResponse;
     API_KEY: string;
-}
+};
 
 export const MapsFrame: React.FC<Props> = ({ ipResponse, API_KEY }) => {
 
@@ -23,5 +23,4 @@ export const MapsFrame: React.FC<Props> = ({ ipResponse, API_KEY }) => {
     } else {
         return (<div>Error while loading the data, please try again later</div>)
     }
-
-}
+};

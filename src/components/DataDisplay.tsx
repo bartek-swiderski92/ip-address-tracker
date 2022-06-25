@@ -1,22 +1,22 @@
 import '../styles/DataDisplay.scss';
-import { DataDisplayField } from "./DataDisplayField"
+import { DataDisplayField } from "./DataDisplayField";
 
 import { IpResponse } from "./IpResponse.model";
 
 interface Props {
-    ipResponse: IpResponse
-}
+    ipResponse: IpResponse;
+};
 
 export const DataDisplay: React.FC<Props> = ({ ipResponse }) => {
 
-    // Checks if the values are defined, remove last comma
+    // Check if the values are defined, remove last comma
     function stringifyResult(city: string = '', region: string = '', country: string = ''): string {
         let result: string = '';
         if (city) result += city + ', ';
         if (region) result += region + ', ';
         if (country) result += country + ',';
         return result.slice(0, -1);
-    }
+    };
 
     return (
         <div id='data-display' className="data-display">
@@ -28,6 +28,6 @@ export const DataDisplay: React.FC<Props> = ({ ipResponse }) => {
             <div className="data-display__divider"></div>
             <DataDisplayField label={'Isp'} result={ipResponse.isp} />
         </div>
-    )
-}
+    );
+};
 

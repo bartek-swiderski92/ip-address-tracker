@@ -3,7 +3,7 @@ import '../styles/DataDisplayField.scss';
 interface Props {
     label: string;
     result: string;
-}
+};
 
 export const DataDisplayField: React.FC<Props> = ({label, result}) => {
 
@@ -13,5 +13,5 @@ export const DataDisplayField: React.FC<Props> = ({label, result}) => {
             <div className="data-display-field__result">{result}</div>
         </div>
     )
-}
+};
 

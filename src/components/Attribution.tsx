@@ -1,4 +1,4 @@
-import '../styles/Attribution.scss'
+import '../styles/Attribution.scss';
 
 export const Attribution: React.FC = () => {
     return (
@@ -7,4 +7,4 @@ export const Attribution: React.FC = () => {
             Coded by <a href="https://www.linkedin.com/in/bartek-swiderski92/">Bartek Swiderski</a>.
         </div>
     )
-}
+};
