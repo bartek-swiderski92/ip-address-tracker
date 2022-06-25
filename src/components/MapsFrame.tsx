@@ -1,15 +1,10 @@
 import '../styles/MapsFrame.scss';
 
+import { IpResponse } from "./IpResponse.model";
+
 interface Props {
-    ipResponse: {
-        ip: string,
-        city: string,
-        timezone: string,
-        lat: string,
-        lng: string
-        isp: string,
-    };
-    API_KEY: string
+    ipResponse: IpResponse;
+    API_KEY: string;
 }
 
 export const MapsFrame: React.FC<Props> = ({ ipResponse, API_KEY }) => {

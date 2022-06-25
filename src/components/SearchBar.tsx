@@ -2,22 +2,14 @@ import axios from "axios";
 
 import "../styles/SearchBar.scss";
 
+import { IpResponse } from "./IpResponse.model";
+
 interface Props {
     placeholder: string;
     setIpResponse: any;
     animateLoading: any;
 };
 
-interface ipResponse {
-    ip: string;
-    lat: string,
-    lng: string,
-    city?: string;
-    region?: string;
-    country?: string;
-    timezone: string;
-    isp: string;
-}
 
 export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animateLoading }) => {
     const apiKey: string = 'at_oDYp4pdQHFfB8CUs5Er7QRjG0QGxX';
@@ -31,10 +23,8 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animate
         const inputValue: string = (document.getElementById('ip-input') as HTMLInputElement).value;
 
         // Check if value passed is an input or a hostname
-        // eslint-disable-next-line
-        const ValidIpAddressRegex = new RegExp("^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
-        // eslint-disable-next-line
-        const ValidHostnameRegex = new RegExp("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$");
+        const ValidIpAddressRegex = new RegExp("^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
+        const ValidHostnameRegex = new RegExp("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]).)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9])$");
 
         // enter correct param key
         if (ValidIpAddressRegex.test(inputValue) === true) {
@@ -51,7 +41,7 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animate
         // TODO: define type for axios request
         axios.get(apiUrl)
             .then((response) => {
-                const ipResponse: ipResponse = {
+                const ipResponse: IpResponse = {
                     ip: response.data.ip,
                     lat: response.data.location.lat,
                     lng: response.data.location.lng,
