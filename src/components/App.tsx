@@ -8,6 +8,7 @@ import '../styles/App.scss';
 import { Header } from './Header';
 import { DataDisplay } from './DataDisplay';
 import { MapsFrame } from './MapsFrame';
+import { Attribution } from './Attribution';
 
 const API_KEY = 'AIzaSyBrsnBRlSG9TfiQQif6GbwzTp7AQtdeyCA'
 
@@ -43,11 +44,7 @@ function App() {
                 )}
                 <FontAwesomeIcon id="spinner" className="app__spinner" icon={faSpinner} />
             </div>
-            
-            <div className="app__attribution">
-                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>.
-                Coded by <a href="https://www.linkedin.com/in/bartek-swiderski92/">Bartek Swiderski</a>.
-            </div>
+            <Attribution />
         </div >
     );
 }

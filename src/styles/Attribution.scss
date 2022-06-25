@@ -1,0 +1,9 @@
+@import "./sass/variables";
+
+.attribution {
+    align-self: center;
+    justify-self: flex-end;
+    font-family: $font-family;
+    margin-top: auto;
+    margin-bottom: 4rem;
+}
