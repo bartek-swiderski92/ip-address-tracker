@@ -53,7 +53,13 @@ export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animate
             })
             .catch(() => {
                 animateLoading(false);
-                setIpResponse(false);
+                setIpResponse({
+                    ip: '',
+                    lat: '',
+                    lng: '',
+                    timezone: '',
+                    isp: '',
+                });
                 window.alert('Invalid request, please check your input or try again later')
             })
     };

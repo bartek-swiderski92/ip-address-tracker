@@ -41,7 +41,7 @@ export const App: React.FC = () => {
         <div className="app">
             <Header setIpResponse={setIpResponse} animateLoading={animateLoading} />
             <div className="app__response">
-                {ipResponse ? (
+                {ipResponse.ip !== '' ? (
                     <div id="response-data" className="app__response-data">
                         <DataDisplay ipResponse={ipResponse} />
                         <MapsFrame ipResponse={ipResponse} API_KEY={API_KEY} />
