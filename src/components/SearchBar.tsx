@@ -14,8 +14,7 @@ interface Props {
 export const SearchBar: React.FC<Props> = ({ placeholder, setIpResponse, animateLoading }) => {
     const apiKey: string = 'at_oDYp4pdQHFfB8CUs5Er7QRjG0QGxX';
 
-    //TODO: Check type for onClick Event
-    function getInputValue(event: any) {
+    const getInputValue = (event: React.FormEvent): void => {
         event.preventDefault();
         animateLoading(true);
 
