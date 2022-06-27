@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/umi-digital/static/css/main.2e5a2e1b.css",
+    "main.js": "/umi-digital/static/js/main.839192b9.js",
+    "static/media/pattern-bg.png": "/umi-digital/static/media/pattern-bg.a60a3c85aa8b88aac4b7.png",
+    "index.html": "/umi-digital/index.html",
+    "main.2e5a2e1b.css.map": "/umi-digital/static/css/main.2e5a2e1b.css.map",
+    "main.839192b9.js.map": "/umi-digital/static/js/main.839192b9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e5a2e1b.css",
+    "static/js/main.839192b9.js"
+  ]
+}
