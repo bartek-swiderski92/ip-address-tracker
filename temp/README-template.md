@@ -1,3 +1,4 @@
+
 # Frontend Mentor - IP address tracker solution
 
 This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
@@ -25,12 +26,16 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 Users should be able to:
 
 - View the optimal layout for each page depending on their device's screen size
+<!-- TODO: Hover Status -->
 - See hover states for all interactive elements on the page
+- <!-- TODO: Display user ip  as default -->
+- <!-- TODO: use effect hook on the page render -->
+- <!-- TODO: add homepage address to the header element -->
 - See their own IP address on the map on the initial page load
 - Search for any IP addresses or domains and see the key information and location
 
 ### Screenshot
-
+<!-- TODO: Add Screenshots -->
 ![](./screenshot.jpg)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
@@ -43,18 +48,28 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
+<!-- TODO: Host the project and input links here-->
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
 ### Built with
+<p>
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />&nbsp;&nbsp;
+        <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />&nbsp;&nbsp;
+        <img src="https://img.shields.io/badge/sass%20-%23cc6699.svg?&style=for-the-badge&logo=sass&logoColor=white" />&nbsp;&nbsp;
+        <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp;
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
+  - The app is built in React with TSX syntax and function components
+  - Types defined for props, and state and effect hooks
+  - Regex validates and categorizes user input
+  - <!-- TODO: add anchor elements to API names -->
+  - App uses ipify and google maps APIs in order to generate output
+  - Components style using BEM methodology 
+  - Flexbox 
+  - Mobile first workflow 
+</p>
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
@@ -62,7 +77,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
-
+<!-- TODO: add skills evaluated: API, Regex validation, typescript in react --> 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
@@ -86,13 +101,13 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
-
+<!-- TODO: mention diving deeper into building apps in React and Typescript and REST API -->
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
-
+<!-- TODO: add typescript, react documentation, regex https://regexr.com/, regex solution found in the web tutorial to securing Google Maps API-->
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
@@ -100,11 +115,11 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+  <a href="https://www.linkedin.com/in/bartek-swiderski92/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/bartek-swiderski92/"><img src="https://img.shields.io/badge/github-%333333B.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+
 
 ## Acknowledgments
 
