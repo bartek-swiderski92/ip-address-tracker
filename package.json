@@ -1,6 +1,7 @@
 {
   "name": "ip-address-tracker",
   "version": "0.1.0",
+  "homepage": "https://bartek-swiderski92.github.io/umi-digital/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -22,6 +23,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@types/body-parser": "^1.19.2"
+    "@types/body-parser": "^1.19.2",
+    "gh-pages": "^4.0.0"
   }
 }
