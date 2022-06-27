@@ -1,7 +1,6 @@
 {
   "name": "ip-address-tracker",
   "version": "0.1.0",
-  "homepage": "https://bartek-swiderski92.github.io/umi-digital/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
